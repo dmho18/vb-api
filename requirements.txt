@@ -150,7 +150,7 @@ sanic==19.12.2
 Sanic-Cors==0.10.0.post3
 sanic-jwt==1.4.1
 Sanic-Plugins-Framework==0.9.5
-scikit-learn==0.22.2.post1
+# scikit-learn==0.22.2.post1
 scipy==1.6.3
 Send2Trash==1.5.0
 sentry-sdk==0.19.5
