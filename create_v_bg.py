@@ -9,7 +9,6 @@ import numpy as np
 from numpy import save
 from PIL import Image
 
-
 LABEL_NAMES = np.asarray([
   'background', 'aeroplane', 'bicycle', 'bird', 'boat', 'bottle', 'bus',
   'car', 'cat', 'chair', 'cow', 'diningtable', 'dog', 'horse', 'motorbike',
@@ -43,7 +42,7 @@ class DeepLabModel(object):
         for tar_info in tar_file.getmembers():
             if _FROZEN_GRAPH_NAME in os.path.basename(tar_info.name):
                 file_handle = tar_file.extractfile(tar_info)
-                graph_def = tf.GraphDef.FromString(file_handle.read())
+                graph_def = tf.compat.v1.GraphDef.FromString(file_handle.read())
                 break
 
         tar_file.close()
@@ -54,7 +53,7 @@ class DeepLabModel(object):
         with self.graph.as_default():      
             tf.import_graph_def(graph_def, name='')
         
-        self.sess = tf.Session(graph=self.graph)
+        self.sess = tf.compat.v1.Session(graph=self.graph)
             
     def run(self, image):
         """Runs inference on a single image.
