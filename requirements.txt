@@ -133,8 +133,8 @@ pytz==2019.3
 PyYAML==5.4.1
 pyzmq==22.0.3
 questionary==1.5.2
-rasa==1.10.2
-rasa-sdk==1.10.3
+# rasa==1.10.2
+# rasa-sdk==1.10.3
 redis==3.5.3
 regex==2020.9.27
 requests==2.25.1
